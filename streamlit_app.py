@@ -30,6 +30,7 @@ def main():
         response = recommend(movie_name, model)
         recommendations = response.split('\n\n\n') 
         st.write("Recommendations and Why you'd like them")
+        st.write(recommendations)
         for i, recommendation in enumerate(recommendations, start=1):
             text_color = '#FFFFFF'
             background_color = '#' + '%06x' % random.randint(0, 0xFFFFFF) 
