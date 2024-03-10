@@ -6,7 +6,6 @@ import textwrap
 genai.configure(api_key='AIzaSyDlBFVsmV8pao6Ax-bcR0dc5h4CusiNCsc')
 
 def to_markdown(text):
-    text = text.replace('•', '*')
     return text
 
 
