@@ -13,7 +13,7 @@ def prompt(movie_name):
     prompt_parts = [
         f"'As a seasoned movie critic with a broad spectrum of cinematic exposure across languages,"
         f"recommend five movies similar to the given movie-Movie name: {movie_name},"
-        f"Also for each movie explain why you find it similar to the given movie'",
+        f"Also for each movie explain why you find it similar to the given movie .After each recommendation leave 3 newlines'",
     ]
     return prompt_parts
     
