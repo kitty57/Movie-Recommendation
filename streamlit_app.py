@@ -12,10 +12,7 @@ def prompt(movie_name):
         f"Also for each movie explain why you find it similar to the given movie'",
     ]
     return prompt_parts
-def to_markdown(text):
-    text = text.replace('•', '  *')
-    return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
-  
+    
 def recommend(movie_name, model):
     human_prompt = prompt(movie_name)
     response = model.generate_content(human_prompt)
@@ -26,7 +23,7 @@ def main():
     if movie_name:
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(movie_name, model)
-        st.markdown(to_markdown(response))
+        st.markdown(response)
 if __name__ == '__main__':
     main()
 
