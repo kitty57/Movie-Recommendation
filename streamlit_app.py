@@ -29,7 +29,9 @@ def main():
         response = recommend(movie_name, model)
         recommendations = response.split('\n') 
         for i, recommendation in enumerate(recommendations, start=1):
-            st.markdown(f"<div style='background-color: {'#f0f0f0' if i % 2 == 0 else '#e0e0e0'}; padding: 10px'>{recommendation}</div>", unsafe_allow_html=True)
+            text_color = '#FFFFFF'
+            background_color = '#4E342E' if i % 2 == 0 else '#795548'
+            st.markdown(f"<div style='color: {text_color}; background-color: {background_color}; padding: 10px'>{recommendation}</div>", unsafe_allow_html=True)
 if __name__ == '__main__':
     main()
 
