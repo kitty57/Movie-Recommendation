@@ -31,7 +31,7 @@ def main():
         recommendations = response.split('---') 
         st.write("Recommendations and Why you'd like them")
         for i, recommendation in enumerate(recommendations, start=1):
-            text_color = '#FFFFFF'
+            text_color = '#000000'
             background_color = '#' + '%06x' % random.randint(0, 0xFFFFFF) 
             style = f"color: {text_color}; background-color: {background_color}; padding: 10px; border-radius: 15px; margin-bottom: 45px;"
             st.markdown(f"<div style='{style}'>{recommendation}</div>", unsafe_allow_html=True)
