@@ -29,7 +29,7 @@ def main():
         response = recommend(movie_name, model)
         recommendations = response.split('\n') 
         for i, recommendation in enumerate(recommendations, start=1):
-            st.text_area(f"Recommendation {i}", recommendation, height=100, key=f"recommendation_{i}", style=f"background-color: {'#f0f0f0' if i % 2 == 0 else '#e0e0e0'}")
+            st.markdown(f"<div style='background-color: {'#f0f0f0' if i % 2 == 0 else '#e0e0e0'}; padding: 10px'>{recommendation}</div>", unsafe_allow_html=True)
 if __name__ == '__main__':
     main()
 
