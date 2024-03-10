@@ -1,5 +1,5 @@
 import streamlit as st
-from google.generativeai import GenerativeModel
+import google.generativeai as genai
 from IPython.display import Markdown
 import textwrap
 
@@ -24,7 +24,7 @@ def main():
     st.title('Movie Recommendation App')
     movie_name = st.text_input('Enter the movie name:')
     if movie_name:
-        model = GenerativeModel(model_name="gemini-pro")
+        model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(movie_name, model)
         st.markdown(to_markdown(response))
 if __name__ == '__main__':
