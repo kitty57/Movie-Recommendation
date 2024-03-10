@@ -34,7 +34,8 @@ def main():
             text_color = '#000000'
             background_color = '#' + '%06x' % random.randint(0, 0xFFFFFF) 
             style = f"color: {text_color}; background-color: {background_color}; padding: 10px; border-radius: 15px; margin-bottom: 45px;"
-            st.markdown(f"<div style='{style}'>{recommendation}</div>", unsafe_allow_html=True)
+            recommendation_text = recommendation.replace('**', '<strong>', 1).replace('**', '</strong>', 1)
+            st.markdown(f"<div style='{style}'>{recommendation_text}</div>", unsafe_allow_html=True)
 if __name__ == '__main__':
     main()
 
