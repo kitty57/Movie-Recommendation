@@ -2,6 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 from IPython.display import Markdown
 import textwrap
+import random
 
 genai.configure(api_key='AIzaSyDlBFVsmV8pao6Ax-bcR0dc5h4CusiNCsc')
 
