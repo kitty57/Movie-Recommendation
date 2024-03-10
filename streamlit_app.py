@@ -13,7 +13,7 @@ def prompt(movie_name):
     prompt_parts = [
         f"'As a seasoned movie critic with a broad spectrum of cinematic exposure across languages,"
         f"recommend five movies similar to the given movie-Movie name: {movie_name},"
-        f"Also for each movie explain why you find it similar to the given movie .After each recommendation leave 3 newlines'",
+        f"Also for each movie explain why you find it similar to the given movie .After each movie recommendation in the 5 add 3 newlines'",
     ]
     return prompt_parts
     
@@ -27,7 +27,7 @@ def main():
     if movie_name:
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(movie_name, model)
-        recommendations = response.split('\n') 
+        recommendations = response.split('\n\n\n') 
         for i, recommendation in enumerate(recommendations, start=1):
             text_color = '#FFFFFF'
             background_color = '#4E342E' if i % 2 == 0 else '#795548'
