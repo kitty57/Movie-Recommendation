@@ -30,11 +30,10 @@ def main():
         response = recommend(movie_name, model)
         recommendations = response.split('---') 
         st.write("Recommendations and Why you'd like them")
-        st.write(recommendations)
         for i, recommendation in enumerate(recommendations, start=1):
             text_color = '#FFFFFF'
             background_color = '#' + '%06x' % random.randint(0, 0xFFFFFF) 
-            style = f"color: {text_color}; background-color: {background_color}; padding: 10px; border-radius: 15px; margin-bottom: 10px;"
+            style = f"color: {text_color}; background-color: {background_color}; padding: 10px; border-radius: 15px; margin-bottom: 45px;"
             st.markdown(f"<div style='{style}'>{recommendation}</div>", unsafe_allow_html=True)
 if __name__ == '__main__':
     main()
