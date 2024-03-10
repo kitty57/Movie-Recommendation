@@ -27,7 +27,9 @@ def main():
     if movie_name:
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(movie_name, model)
-        st.markdown(to_markdown(response))
+        recommendations = response.split('\n') 
+        for i, recommendation in enumerate(recommendations, start=1):
+            st.text_area(f"Recommendation {i}", recommendation, height=100, key=f"recommendation_{i}", background=f"{'#f0f0f0' if i % 2 == 0 else '#e0e0e0'}")
 if __name__ == '__main__':
     main()
 
