@@ -31,7 +31,7 @@ def main():
         for i, recommendation in enumerate(recommendations, start=1):
             text_color = '#FFFFFF'
             background_color = '#4E342E' if i % 2 == 0 else '#795548'
-            style = f"color: {text_color}; background-color: {background_color}; padding: 10px; border-radius: 15px; margin-bottom: 10px;"
+            style = f"color: {text_color}; background-color: {background_color}; padding: 10px; border-radius: 15px; margin-bottom: 100px;"
             st.markdown(f"<div style='{style}'>{recommendation}</div>", unsafe_allow_html=True)
 if __name__ == '__main__':
     main()
