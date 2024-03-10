@@ -28,7 +28,7 @@ def main():
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(movie_name, model)
         recommendations = response.split('\n\n\n') 
-        st.write('Recommendations and Why you'd like them')
+        st.write("Recommendations and Why you'd like them")
         for i, recommendation in enumerate(recommendations, start=1):
             text_color = '#FFFFFF'
             background_color = '#4E342E' if i % 2 == 0 else '#795548'
