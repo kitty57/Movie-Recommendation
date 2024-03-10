@@ -5,6 +5,11 @@ import textwrap
 
 genai.configure(api_key='AIzaSyDlBFVsmV8pao6Ax-bcR0dc5h4CusiNCsc')
 
+def to_markdown(text):
+    text = text.replace('•', '*')
+    return text
+
+
 def prompt(movie_name):
     prompt_parts = [
         f"'As a seasoned movie critic with a broad spectrum of cinematic exposure across languages,"
@@ -23,7 +28,7 @@ def main():
     if movie_name:
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(movie_name, model)
-        st.markdown(response)
+        st.markdown(to_markdown(response))
 if __name__ == '__main__':
     main()
 
