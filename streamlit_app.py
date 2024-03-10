@@ -28,7 +28,7 @@ def main():
     if movie_name:
         model = genai.GenerativeModel(model_name="gemini-pro")
         response = recommend(movie_name, model)
-        recommendations = response.split('\n\n\n') 
+        recommendations = response.split('---') 
         st.write("Recommendations and Why you'd like them")
         st.write(recommendations)
         for i, recommendation in enumerate(recommendations, start=1):
